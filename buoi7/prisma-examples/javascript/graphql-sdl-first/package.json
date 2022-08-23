@@ -1,0 +1,23 @@
+{
+  "name": "javascript-graphql",
+  "scripts": {
+    "dev": "node ./src/server.js"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "dependencies": {
+    "@prisma/client": "4.2.1",
+    "apollo-server": "3.10.1",
+    "graphql": "16.5.0",
+    "graphql-scalars": "1.18.0"
+  },
+  "devDependencies": {
+    "prisma": "4.2.1"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  }
+}
