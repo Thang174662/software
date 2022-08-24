@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Employee {
+  id    Int     @id 
+  name  String?
+  Timekeeping Timekeeping[]
+}
+
+model Timekeeping {
+  id        Int      @id @default(autoincrement())
+  employeeId Int
+  time DateTime @default(now())
+  checkin Boolean? 
+  checkout Boolean?
+  employee    Employee?    @relation(fields: [employeeId], references: [id])
+}
